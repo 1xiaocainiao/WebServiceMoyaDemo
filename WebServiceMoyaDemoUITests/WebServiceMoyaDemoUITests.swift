@@ -1,13 +1,13 @@
 //
-//  WebServiceDemoUITests.swift
-//  WebServiceDemoUITests
+//  WebServiceMoyaDemoUITests.swift
+//  WebServiceMoyaDemoUITests
 //
 //  Created by Apple on 2021/7/29.
 //
 
 import XCTest
 
-class WebServiceDemoUITests: XCTestCase {
+class WebServiceMoyaDemoUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

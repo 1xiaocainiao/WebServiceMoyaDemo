@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_WebServiceDemoVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_WebServiceDemoVersionString[];
+FOUNDATION_EXPORT double Pods_WebServiceMoyaDemoVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_WebServiceMoyaDemoVersionString[];
 

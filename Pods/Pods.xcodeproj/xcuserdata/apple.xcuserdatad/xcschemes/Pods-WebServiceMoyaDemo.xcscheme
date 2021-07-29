@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2CD8C61C752675A8A9C7F88B95DBD4E8"
-               BuildableName = "Pods_WebServiceDemo.framework"
-               BlueprintName = "Pods-WebServiceDemo"
+               BlueprintIdentifier = "CEE52CC645C45CECAB1298EE3D0DFCBC"
+               BuildableName = "Pods_WebServiceMoyaDemo.framework"
+               BlueprintName = "Pods-WebServiceMoyaDemo"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
