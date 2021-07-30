@@ -13,10 +13,14 @@ protocol MoyaAddable {
 
 public extension TargetType {
     var baseURL : URL {
-        return URL(string: "base url")!
+        return URL(string: "https://www.baidufe.com/test-post.php")!
     }
     
     var headers : [String : String]? {
         return nil
+    }
+    
+    var sampleData: Data {
+        return "".data(using: String.Encoding.utf8)!
     }
 }

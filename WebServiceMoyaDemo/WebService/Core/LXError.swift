@@ -8,7 +8,7 @@
 import Foundation
 
 public struct ResponseCode {
-    static let successResponseStatusCode = 200
+    static let successResponseStatusCode = "200"
 }
 
 public enum LXError: Error {
@@ -17,9 +17,21 @@ public enum LXError: Error {
     // json转字典失败
     case jsonToDictionaryFailed(message: String)
     // 服务器返回错误
-    case serverResponseError(message: String?, code: Int)
+    case serverResponseError(message: String?, code: String)
     // 自定义错误
     case exception(message: String)
+    // 服务器返回数据初始化失败
+    case serverDataFormatError
+    // statucode
+    case missStatuCode
+    //
+    case missDataContent
+    //
+    case dataContentTransformToModelFailed
+    //
+    case dataContentTransfromToModelArrayFailed
+    
+    case networkConnectFailed
 }
 
 extension LXError {
@@ -32,12 +44,12 @@ extension LXError {
         }
     }
     
-    var code: Int {
+    var code: String {
         switch self {
         case let .serverResponseError(message: _, code: code):
             return code
         default:
-            return -1
+            return "-1"
         }
     }
 }

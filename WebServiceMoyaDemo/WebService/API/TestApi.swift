@@ -43,3 +43,25 @@ extension DouBan: TargetType {
         }
     }
 }
+
+enum TestBaidu {
+    case baidu
+}
+
+extension TestBaidu: TargetType, MoyaAddable {
+    var path: String {
+        return ""
+    }
+    
+    var method: Moya.Method {
+        return .post
+    }
+    
+    var task: Task {
+        switch self {
+        case .baidu:
+            let params = ["username": "postman", "password": "123465"]
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+        }
+    }
+}
