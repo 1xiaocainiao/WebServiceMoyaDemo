@@ -44,24 +44,29 @@ extension DouBan: TargetType {
     }
 }
 
-enum TestBaidu {
+/// 分割线
+
+
+
+enum TestRequestType {
     case baidu
+    case upload([LXUploadFileInfo])
 }
 
-extension TestBaidu: TargetType, MoyaAddable {
+extension TestRequestType: TargetType, MoyaAddable {
     var path: String {
         return ""
-    }
-    
-    var method: Moya.Method {
-        return .post
     }
     
     var task: Task {
         switch self {
         case .baidu:
             let params = ["username": "postman", "password": "123465"]
-            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+            return .requestParameters(parameters: params.merged(with: self.publicParams()), encoding: URLEncoding.default)
+            
+        case .upload(let uploadFiles):
+            let formDatas = self.uploadFiles(files: uploadFiles)
+            return .uploadMultipart(formDatas)
         }
     }
 }
