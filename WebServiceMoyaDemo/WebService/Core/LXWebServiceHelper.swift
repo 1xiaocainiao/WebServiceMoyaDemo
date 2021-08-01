@@ -60,12 +60,16 @@ open class LXWebServiceHelper<T> where T: NSObject {
 fileprivate class _WebServiceHelper {
     static let `default` = _WebServiceHelper()
     
+    // 可自定义加解密插件等
     private func createProvider<R: TargetType & MoyaAddable>(type: R) -> MoyaProvider<R> {
         let activityPlugin = NetworkActivityPlugin { state, targetType in
             self.networkActiviyIndicatorVisible(visibile: state == .began)
-            
         }
-        let provider = MoyaProvider<R>(plugins: [activityPlugin])
+        
+        let aesPlugin = LXAESPlugin()
+        
+        let provider = MoyaProvider<R>(plugins: [activityPlugin, aesPlugin])
+        
         return provider
     }
     
@@ -98,7 +102,7 @@ fileprivate class _WebServiceHelper {
                         exceptionHandle(container.error)
                     }
                 } catch  {
-                    exceptionHandle(LXError.jsonToDictionaryFailed(message: "json 解析失败"))
+                    exceptionHandle(LXError.serverDataFormatError)
                 }
                 break
             case .failure(_):

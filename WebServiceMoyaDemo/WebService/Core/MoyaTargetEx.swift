@@ -15,7 +15,11 @@ public protocol MoyaAddable {
 
 public extension TargetType {
     var baseURL : URL {
-        return URL(string: "https://www.baidufe.com/test-post.php")!
+        return URL(string: "")!
+    }
+    
+    var path: String {
+        return ""
     }
     
     var method: Moya.Method {
@@ -34,13 +38,21 @@ public extension TargetType {
 public extension MoyaAddable {
     func publicParams() -> [String: String] {
         var resultInfo = [String: String]()
+//        resultInfo["client_platform"] = "iOS"
+//        resultInfo["client_os_version"] = UIDevice.current.systemVersion
+//        resultInfo["client_app_version"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+//        resultInfo[""] = ""
+//        resultInfo[""] = ""
+//        resultInfo[""] = ""
+//        resultInfo["interface_version"] = interface_version
+        
         resultInfo["client_platform"] = "iOS"
         resultInfo["client_os_version"] = UIDevice.current.systemVersion
+        resultInfo["interface_version"] = "V475"
         resultInfo["client_app_version"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        resultInfo[""] = ""
-        resultInfo[""] = ""
-        resultInfo[""] = ""
-        resultInfo["interface_version"] = interface_version
+        
+        resultInfo["udid"] = "lsdfljasljdfljasldjfjlsdkjfkljlasjdf"
+        resultInfo["device_type"] = "iPhone"
         return resultInfo
     }
     
