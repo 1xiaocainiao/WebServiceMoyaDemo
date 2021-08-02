@@ -26,12 +26,30 @@ enum PolicyEnum {
 
 extension PolicyEnum: TargetType, MoyaAddable {
     
-    
     var task: Task {
         switch self {
         case .policy:
             let params = ["bundle_name": "", "api_name": ""]
             return .requestParameters(parameters: params.merged(with: self.publicParams()), encoding: URLEncoding.default)
+        }
+    }
+}
+
+enum TestRequestType {
+    case baidu
+    case upload([LXUploadFileInfo],[String: Any]? = nil)
+}
+
+extension TestRequestType: TargetType, MoyaAddable {
+    var task: Task {
+        switch self {
+        case .baidu:
+            let params = ["username": "postman", "password": "123465"]
+            return .requestParameters(parameters: params.merged(with: self.publicParams()), encoding: URLEncoding.default)
+            
+        case .upload(let uploadFiles, let params):
+            let formDatas = self.uploadFiles(files: uploadFiles, params: params)
+            return .uploadMultipart(formDatas)
         }
     }
 }

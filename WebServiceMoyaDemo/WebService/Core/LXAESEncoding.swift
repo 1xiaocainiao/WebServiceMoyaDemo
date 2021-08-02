@@ -12,6 +12,21 @@ let kPublicKey = "9A13AE6CAE4C1FF134F22F3B0953F0DA"
 let kAESKey = "31FF1BAC33ABDC97"
 let kAESIV = "ABDF4EB14FFAC1C1"
 
+func paramsEncrypt(params: [String: Any]) -> Data? {
+    do {
+        let jsonData = try JSONSerialization.data(withJSONObject: params,
+                                                  options: JSONSerialization.WritingOptions.prettyPrinted)
+        
+        guard let encryptData = AES.default.encrypt(data: jsonData) else {
+            return nil
+        }
+        
+        return encryptData.base64EncodedData()
+    } catch  {
+        debugPrint("encrypt failed")
+        return nil
+    }
+}
 
 struct AES {
     

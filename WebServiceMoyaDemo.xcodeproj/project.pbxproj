@@ -20,7 +20,7 @@
 		18FF63DB26B2BA6A009AEC71 /* LXWebServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF63D526B2BA6A009AEC71 /* LXWebServiceHelper.swift */; };
 		18FF63DC26B2BA6A009AEC71 /* LXError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF63D626B2BA6A009AEC71 /* LXError.swift */; };
 		DA531E1855360D3853D5F245 /* Pods_WebServiceMoyaDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB87899551C24BDD270CC57C /* Pods_WebServiceMoyaDemo.framework */; };
-		E17AAE2326B5752F00DAC57A /* LXAESPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAE2226B5752F00DAC57A /* LXAESPlugin.swift */; };
+		E17AAE2326B5752F00DAC57A /* LXHandleRequestPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AAE2226B5752F00DAC57A /* LXHandleRequestPlugin.swift */; };
 		E1A8AECC26B4186A00EFB67C /* LXAESEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A8AECB26B4186A00EFB67C /* LXAESEncoding.swift */; };
 		E1A8AECE26B41C3D00EFB67C /* LXUploadFileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A8AECD26B41C3D00EFB67C /* LXUploadFileInfo.swift */; };
 		E1D16A4426B6BCFE00614519 /* TestPolicyApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D16A4326B6BCFE00614519 /* TestPolicyApi.swift */; };
@@ -66,7 +66,7 @@
 		18FF63D626B2BA6A009AEC71 /* LXError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXError.swift; sourceTree = "<group>"; };
 		601F6B558C43168CB27484C0 /* Pods-WebServiceMoyaDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebServiceMoyaDemo.release.xcconfig"; path = "Target Support Files/Pods-WebServiceMoyaDemo/Pods-WebServiceMoyaDemo.release.xcconfig"; sourceTree = "<group>"; };
 		BB87899551C24BDD270CC57C /* Pods_WebServiceMoyaDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebServiceMoyaDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E17AAE2226B5752F00DAC57A /* LXAESPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXAESPlugin.swift; sourceTree = "<group>"; };
+		E17AAE2226B5752F00DAC57A /* LXHandleRequestPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXHandleRequestPlugin.swift; sourceTree = "<group>"; };
 		E1A8AECB26B4186A00EFB67C /* LXAESEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXAESEncoding.swift; sourceTree = "<group>"; };
 		E1A8AECD26B41C3D00EFB67C /* LXUploadFileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXUploadFileInfo.swift; sourceTree = "<group>"; };
 		E1D16A4326B6BCFE00614519 /* TestPolicyApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPolicyApi.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 				18FF63D526B2BA6A009AEC71 /* LXWebServiceHelper.swift */,
 				18FF63D626B2BA6A009AEC71 /* LXError.swift */,
 				E1A8AECB26B4186A00EFB67C /* LXAESEncoding.swift */,
-				E17AAE2226B5752F00DAC57A /* LXAESPlugin.swift */,
+				E17AAE2226B5752F00DAC57A /* LXHandleRequestPlugin.swift */,
 				E1A8AECD26B41C3D00EFB67C /* LXUploadFileInfo.swift */,
 			);
 			path = Core;
@@ -380,7 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E17AAE2326B5752F00DAC57A /* LXAESPlugin.swift in Sources */,
+				E17AAE2326B5752F00DAC57A /* LXHandleRequestPlugin.swift in Sources */,
 				18FF63DC26B2BA6A009AEC71 /* LXError.swift in Sources */,
 				18FF63DB26B2BA6A009AEC71 /* LXWebServiceHelper.swift in Sources */,
 				E1D16A4F26B6C49300614519 /* TestModel.swift in Sources */,

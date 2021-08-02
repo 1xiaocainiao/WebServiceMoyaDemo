@@ -66,7 +66,7 @@ fileprivate class _WebServiceHelper {
             self.networkActiviyIndicatorVisible(visibile: state == .began)
         }
         
-        let aesPlugin = LXAESPlugin()
+        let aesPlugin = LXHandleRequestPlugin()
         
         let provider = MoyaProvider<R>(plugins: [activityPlugin, aesPlugin])
         

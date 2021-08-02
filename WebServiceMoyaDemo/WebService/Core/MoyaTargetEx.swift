@@ -56,12 +56,18 @@ public extension MoyaAddable {
         return resultInfo
     }
     
-    func uploadFiles(files: [LXUploadFileInfo]) -> [MultipartFormData] {
-        let formDatas = files.map { fileInfo in
+    func uploadFiles(files: [LXUploadFileInfo], params: [String: Any]?) -> [MultipartFormData] {
+        var formDatas = files.map { fileInfo in
             return MultipartFormData(provider:
                                         .file(URL(fileURLWithPath: fileInfo.filePath)),
                                      name: fileInfo.fileUploadKey,
                                      fileName: fileInfo.fileName)
+        }
+        
+        if let params = params,
+           let paramsData = paramsEncrypt(params: params.merged(with: publicParams())) {
+            let dicData = MultipartFormData(provider: .data(paramsData), name: "data")
+            formDatas.append(dicData)
         }
         return formDatas
     }
