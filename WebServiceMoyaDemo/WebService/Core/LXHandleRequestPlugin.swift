@@ -8,8 +8,6 @@
 import Foundation
 import Moya
 
-
-
 //统一在这里处理请求前的设置和请求后需要处理的数据
 class LXHandleRequestPlugin: PluginType {
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
