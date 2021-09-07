@@ -8,7 +8,7 @@
 import Foundation
 import YYModel
 
-public class LXRequestResultContainer<T> where T: NSObject {
+public class LXRequestResultContainer<T> where T: LXBaseModel {
     public enum ResultType: Int {
         case originData
         case model

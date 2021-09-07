@@ -9,13 +9,13 @@ import UIKit
 import YYModel
 
 @objcMembers
-class TestModel: NSObject {
+class TestModel: LXBaseModel {
     var user_info: UserInfo?
     var site: SiteModel?
 }
 
 @objcMembers
-class UserInfo: NSObject {
+class UserInfo: LXBaseModel {
     var username: String = ""
     var truename: String = ""
     var city: String = ""
@@ -25,7 +25,7 @@ class UserInfo: NSObject {
 }
 
 @objcMembers
-class SiteModel: NSObject {
+class SiteModel: LXBaseModel {
     var name: String = ""
     var url: String = ""
 }

@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18AFF48E26E7637F00E8C30F /* NSObject+LXDataBaseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFF48826E7637F00E8C30F /* NSObject+LXDataBaseCategory.m */; };
+		18AFF48F26E7637F00E8C30F /* LXBasicDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFF48926E7637F00E8C30F /* LXBasicDBManager.m */; };
+		18AFF49026E7637F00E8C30F /* LXBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFF48B26E7637F00E8C30F /* LXBaseModel.m */; };
+		18AFF49726E763E700E8C30F /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFF49426E763E700E8C30F /* NSObject+YYModel.m */; };
+		18AFF49826E763E700E8C30F /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFF49526E763E700E8C30F /* YYClassInfo.m */; };
+		18AFF4A526E7641200E8C30F /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFF49B26E7641200E8C30F /* FMDatabaseQueue.m */; };
+		18AFF4A626E7641200E8C30F /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFF49E26E7641200E8C30F /* FMDatabaseAdditions.m */; };
+		18AFF4A726E7641200E8C30F /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFF49F26E7641200E8C30F /* FMDatabase.m */; };
+		18AFF4A826E7641200E8C30F /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFF4A326E7641200E8C30F /* FMDatabasePool.m */; };
+		18AFF4A926E7641200E8C30F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFF4A426E7641200E8C30F /* FMResultSet.m */; };
+		18AFF4AB26E764DD00E8C30F /* LXHomeListApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AFF4AA26E764DD00E8C30F /* LXHomeListApi.swift */; };
+		18AFF4AD26E765DB00E8C30F /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AFF4AC26E765DB00E8C30F /* DebugPrint.swift */; };
 		18FF63A226B2BA29009AEC71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF63A126B2BA29009AEC71 /* AppDelegate.swift */; };
 		18FF63A426B2BA29009AEC71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF63A326B2BA29009AEC71 /* SceneDelegate.swift */; };
 		18FF63A626B2BA29009AEC71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF63A526B2BA29009AEC71 /* ViewController.swift */; };
@@ -46,6 +58,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18AFF48226E7635F00E8C30F /* WebServiceMoyaDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WebServiceMoyaDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		18AFF48726E7637F00E8C30F /* LXBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXBaseModel.h; sourceTree = "<group>"; };
+		18AFF48826E7637F00E8C30F /* NSObject+LXDataBaseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LXDataBaseCategory.m"; sourceTree = "<group>"; };
+		18AFF48926E7637F00E8C30F /* LXBasicDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXBasicDBManager.m; sourceTree = "<group>"; };
+		18AFF48A26E7637F00E8C30F /* LXDBManagerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXDBManagerHeader.h; sourceTree = "<group>"; };
+		18AFF48B26E7637F00E8C30F /* LXBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXBaseModel.m; sourceTree = "<group>"; };
+		18AFF48C26E7637F00E8C30F /* NSObject+LXDataBaseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LXDataBaseCategory.h"; sourceTree = "<group>"; };
+		18AFF48D26E7637F00E8C30F /* LXBasicDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXBasicDBManager.h; sourceTree = "<group>"; };
+		18AFF49226E763E700E8C30F /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		18AFF49326E763E700E8C30F /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		18AFF49426E763E700E8C30F /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		18AFF49526E763E700E8C30F /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		18AFF49626E763E700E8C30F /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		18AFF49A26E7641200E8C30F /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		18AFF49B26E7641200E8C30F /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		18AFF49C26E7641200E8C30F /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		18AFF49D26E7641200E8C30F /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		18AFF49E26E7641200E8C30F /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		18AFF49F26E7641200E8C30F /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		18AFF4A026E7641200E8C30F /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		18AFF4A126E7641200E8C30F /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		18AFF4A226E7641200E8C30F /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		18AFF4A326E7641200E8C30F /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		18AFF4A426E7641200E8C30F /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		18AFF4AA26E764DD00E8C30F /* LXHomeListApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXHomeListApi.swift; sourceTree = "<group>"; };
+		18AFF4AC26E765DB00E8C30F /* DebugPrint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
 		18FF639E26B2BA29009AEC71 /* WebServiceMoyaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebServiceMoyaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FF63A126B2BA29009AEC71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18FF63A326B2BA29009AEC71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +139,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18AFF48626E7637F00E8C30F /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				18AFF48726E7637F00E8C30F /* LXBaseModel.h */,
+				18AFF48B26E7637F00E8C30F /* LXBaseModel.m */,
+				18AFF48D26E7637F00E8C30F /* LXBasicDBManager.h */,
+				18AFF48926E7637F00E8C30F /* LXBasicDBManager.m */,
+				18AFF48A26E7637F00E8C30F /* LXDBManagerHeader.h */,
+				18AFF48C26E7637F00E8C30F /* NSObject+LXDataBaseCategory.h */,
+				18AFF48826E7637F00E8C30F /* NSObject+LXDataBaseCategory.m */,
+			);
+			path = DBManager;
+			sourceTree = "<group>";
+		};
+		18AFF49126E763E700E8C30F /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				18AFF49626E763E700E8C30F /* NSObject+YYModel.h */,
+				18AFF49426E763E700E8C30F /* NSObject+YYModel.m */,
+				18AFF49226E763E700E8C30F /* YYClassInfo.h */,
+				18AFF49526E763E700E8C30F /* YYClassInfo.m */,
+				18AFF49326E763E700E8C30F /* YYModel.h */,
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
+		18AFF49926E7641200E8C30F /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				18AFF49A26E7641200E8C30F /* FMDatabase.h */,
+				18AFF49B26E7641200E8C30F /* FMDatabaseQueue.m */,
+				18AFF49C26E7641200E8C30F /* FMResultSet.h */,
+				18AFF49D26E7641200E8C30F /* FMDatabasePool.h */,
+				18AFF49E26E7641200E8C30F /* FMDatabaseAdditions.m */,
+				18AFF49F26E7641200E8C30F /* FMDatabase.m */,
+				18AFF4A026E7641200E8C30F /* FMDatabaseQueue.h */,
+				18AFF4A126E7641200E8C30F /* FMDB.h */,
+				18AFF4A226E7641200E8C30F /* FMDatabaseAdditions.h */,
+				18AFF4A326E7641200E8C30F /* FMDatabasePool.m */,
+				18AFF4A426E7641200E8C30F /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 		18FF639526B2BA29009AEC71 = {
 			isa = PBXGroup;
 			children = (
@@ -126,14 +208,19 @@
 		18FF63A026B2BA29009AEC71 /* WebServiceMoyaDemo */ = {
 			isa = PBXGroup;
 			children = (
+				18AFF49926E7641200E8C30F /* FMDB */,
+				18AFF49126E763E700E8C30F /* YYModel */,
+				18AFF48626E7637F00E8C30F /* DBManager */,
 				18FF63D126B2BA6A009AEC71 /* WebService */,
 				18FF63A126B2BA29009AEC71 /* AppDelegate.swift */,
+				18AFF4AC26E765DB00E8C30F /* DebugPrint.swift */,
 				18FF63A326B2BA29009AEC71 /* SceneDelegate.swift */,
 				18FF63A526B2BA29009AEC71 /* ViewController.swift */,
 				18FF63A726B2BA29009AEC71 /* Main.storyboard */,
 				18FF63AA26B2BA2A009AEC71 /* Assets.xcassets */,
 				18FF63AC26B2BA2A009AEC71 /* LaunchScreen.storyboard */,
 				18FF63AF26B2BA2A009AEC71 /* Info.plist */,
+				18AFF48226E7635F00E8C30F /* WebServiceMoyaDemo-Bridging-Header.h */,
 			);
 			path = WebServiceMoyaDemo;
 			sourceTree = "<group>";
@@ -182,6 +269,7 @@
 		18FF63D726B2BA6A009AEC71 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				18AFF4AA26E764DD00E8C30F /* LXHomeListApi.swift */,
 				E1D16A4D26B6C49300614519 /* TestModel.swift */,
 				E1D16A4E26B6C49300614519 /* TestRequestApi.swift */,
 				E1D16A4326B6BCFE00614519 /* TestPolicyApi.swift */,
@@ -275,6 +363,7 @@
 				TargetAttributes = {
 					18FF639D26B2BA29009AEC71 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					18FF63B326B2BA2A009AEC71 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -382,17 +471,29 @@
 			files = (
 				E17AAE2326B5752F00DAC57A /* LXHandleRequestPlugin.swift in Sources */,
 				18FF63DC26B2BA6A009AEC71 /* LXError.swift in Sources */,
+				18AFF49726E763E700E8C30F /* NSObject+YYModel.m in Sources */,
+				18AFF4A726E7641200E8C30F /* FMDatabase.m in Sources */,
+				18AFF48F26E7637F00E8C30F /* LXBasicDBManager.m in Sources */,
+				18AFF4A826E7641200E8C30F /* FMDatabasePool.m in Sources */,
 				18FF63DB26B2BA6A009AEC71 /* LXWebServiceHelper.swift in Sources */,
 				E1D16A4F26B6C49300614519 /* TestModel.swift in Sources */,
+				18AFF48E26E7637F00E8C30F /* NSObject+LXDataBaseCategory.m in Sources */,
+				18AFF4AD26E765DB00E8C30F /* DebugPrint.swift in Sources */,
 				E1A8AECE26B41C3D00EFB67C /* LXUploadFileInfo.swift in Sources */,
+				18AFF4AB26E764DD00E8C30F /* LXHomeListApi.swift in Sources */,
 				18FF63A626B2BA29009AEC71 /* ViewController.swift in Sources */,
+				18AFF4A526E7641200E8C30F /* FMDatabaseQueue.m in Sources */,
+				18AFF49026E7637F00E8C30F /* LXBaseModel.m in Sources */,
 				18FF63A226B2BA29009AEC71 /* AppDelegate.swift in Sources */,
 				18FF63A426B2BA29009AEC71 /* SceneDelegate.swift in Sources */,
 				18FF63D926B2BA6A009AEC71 /* MoyaTargetEx.swift in Sources */,
 				E1D16A5026B6C49300614519 /* TestRequestApi.swift in Sources */,
+				18AFF4A926E7641200E8C30F /* FMResultSet.m in Sources */,
 				E1D16A4426B6BCFE00614519 /* TestPolicyApi.swift in Sources */,
 				E1A8AECC26B4186A00EFB67C /* LXAESEncoding.swift in Sources */,
+				18AFF49826E763E700E8C30F /* YYClassInfo.m in Sources */,
 				18FF63DA26B2BA6A009AEC71 /* LXRequestResultContainer.swift in Sources */,
+				18AFF4A626E7641200E8C30F /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +670,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WebServiceMoyaDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -577,6 +679,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thm.WebServiceMoyaDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WebServiceMoyaDemo/WebServiceMoyaDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -588,6 +692,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WebServiceMoyaDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -596,6 +701,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thm.WebServiceMoyaDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WebServiceMoyaDemo/WebServiceMoyaDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -5,6 +5,10 @@
 //  Created by Apple on 2021/7/29.
 //
 
+func sqlDBName() -> String {
+    return "DBNameDefault"
+}
+
 import UIKit
 
 @main

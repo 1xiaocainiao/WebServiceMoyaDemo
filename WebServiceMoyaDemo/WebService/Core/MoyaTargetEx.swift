@@ -9,8 +9,37 @@ import Moya
 
 let interface_version = ""
 
-public protocol MoyaAddable {
+public struct LXMoyaLoadStatus {
+    var isRefresh: Bool
+    var needLoadDBWhenRefreshing: Bool
+    var needCache: Bool
+    var clearDataWhenCache: Bool
     
+    init(isRefresh: Bool = false,
+         needLoadDBWhenRefreshing: Bool = false,
+         needCache: Bool = false,
+         clearDataWhenCache: Bool = false) {
+        self.isRefresh = isRefresh
+        self.needLoadDBWhenRefreshing = needLoadDBWhenRefreshing
+        self.needCache = needCache
+        self.clearDataWhenCache = clearDataWhenCache
+    }
+}
+
+public protocol MoyaAddable {
+    var cacheKey: String { get }
+    
+    var loadingStatus: LXMoyaLoadStatus { get }
+}
+
+public extension MoyaAddable {
+    var cacheKey: String {
+        return "cacheKey"
+    }
+    
+    var loadingStatus: LXMoyaLoadStatus {
+        return LXMoyaLoadStatus()
+    }
 }
 
 public extension TargetType {

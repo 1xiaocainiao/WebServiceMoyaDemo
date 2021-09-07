@@ -10,7 +10,7 @@ import Moya
 import YYModel
 
 @objcMembers
-class PolicyParamModel: NSObject {
+class PolicyParamModel: LXBaseModel {
     var tapit_interval: String = ""
     var tapit_cout_per_time: String = ""
     var list_limit: String = ""
