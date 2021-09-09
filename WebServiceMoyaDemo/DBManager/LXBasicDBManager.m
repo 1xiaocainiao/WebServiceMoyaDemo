@@ -476,6 +476,121 @@
     return reg;
 }
 
+- (BOOL)insertModelObject:(LXBaseModel *)info clean:(BOOL)clean extTableName:(NSString *)extTableName {
+    Class class = [info class];
+    
+    NSString *tableName = [class lx_tableName];
+    if (extTableName != nil && extTableName.length != 0) {
+        tableName = [NSString stringWithFormat:@"%@%@", tableName, extTableName];
+    }
+    
+    if (![self isExistTable:tableName]) {
+        [self createTable:tableName class:class];
+    }
+    
+    if (clean) {
+        [self clearTableFrom:tableName];
+    }
+    
+    NSDictionary *tempDic = info.yy_modelToJSONObject;
+    NSMutableString *insertSql = [NSMutableString stringWithFormat:@"insert or replace into %@ (", tableName];
+    for (id key in [tempDic allKeys])
+    {
+        NSString *targetKey = key;
+        
+        if ([[[class lx_customPropertyMapper] allKeys] containsObject:key]) {
+            targetKey = [class lx_customPropertyMapper][key];
+        } else {
+            targetKey = key;
+        }
+        
+        [insertSql appendFormat:@"%@,",targetKey];
+    }
+    [insertSql deleteCharactersInRange:NSMakeRange([insertSql length]-1, 1)];
+    [insertSql appendString:@") "
+     " values (" ];
+    for (id key in [tempDic allKeys])
+    {
+        if ([key isEqual:[[tempDic allKeys] lastObject]])
+        {
+            NSData *valueData;
+            
+            NSString *targetKey = key;
+            
+            if ([[[class lx_customPropertyMapper] allKeys] containsObject:key]) {
+                targetKey = [class lx_customPropertyMapper][key];
+            } else {
+                targetKey = key;
+            }
+            
+            LXPropertyEncodingType type = [self property:targetKey inClassType:class];
+            
+            if (type == LXPropertyEncodingTypeData) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+                if ([info valueForKey:targetKey]) {
+                    valueData = [NSKeyedArchiver archivedDataWithRootObject:[info valueForKey:targetKey]];
+                }
+                else {
+                    valueData = [NSData data];
+                }
+#pragma clang diagnostic pop
+            } else {
+                if ([targetKey isEqualToString:@"id"]) {
+                    valueData = tempDic[@"id"];
+                } else {
+                    valueData = [info valueForKey:targetKey];
+                }
+            }
+
+            insertSql = [self lastDataToHexString:valueData insertSql:insertSql];
+        }
+        else
+        {
+            NSData *valueData;
+            
+            NSString *targetKey = key;
+            
+            if ([[[class lx_customPropertyMapper] allKeys] containsObject:key]) {
+                targetKey = [class lx_customPropertyMapper][key];
+            } else {
+                targetKey = key;
+            }
+            
+            LXPropertyEncodingType type = [self property:targetKey inClassType:class];
+            
+            if (type == LXPropertyEncodingTypeData) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+                if ([info valueForKey:targetKey]) {
+                    valueData = [NSKeyedArchiver archivedDataWithRootObject:[info valueForKey:targetKey]];
+                }
+                else {
+                    valueData = [NSData data];
+                }
+#pragma clang diagnostic pop
+            } else {
+                if ([targetKey isEqualToString:@"id"]) {
+                    valueData = tempDic[@"id"];
+                } else {
+                    valueData = [info valueForKey:targetKey];
+                }
+            }
+
+            insertSql = [self dataToHexString:valueData insertSql:insertSql];
+        }
+    }
+    
+    NSLog(@"create insert sql: %@", insertSql);
+    
+    BOOL reg  = [self insertDataWithSQL:insertSql];
+    if (reg)
+    {
+        NSLog(@"%@ insert success", tableName);
+    }
+    return reg;
+}
+
 - (BOOL)insertModelArray:(NSArray<LXBaseModel *> *)infoList
                    clean:(BOOL)clean
             extTableName:(NSString *)extTableName {

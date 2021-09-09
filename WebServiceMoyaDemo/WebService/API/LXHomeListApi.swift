@@ -19,10 +19,10 @@ extension LXHomeListApi: TargetType, MoyaAddable {
         }
     }
     
-    var loadingStatus: LXMoyaLoadStatus {
+    func loadListStatus() -> LXMoyaLoadListStatus {
         switch self {
         case .type(_, page: let page):
-            return LXMoyaLoadStatus(isRefresh: page == 1, needLoadDBWhenRefreshing: page == 1, needCache: page == 1)
+            return LXMoyaLoadListStatus(isRefresh: page == 1, needLoadDBWhenRefreshing: page == 1, needCache: page == 1)
         }
     }
     

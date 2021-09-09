@@ -9,7 +9,7 @@ import Moya
 
 let interface_version = ""
 
-public struct LXMoyaLoadStatus {
+public struct LXMoyaLoadListStatus {
     var isRefresh: Bool
     var needLoadDBWhenRefreshing: Bool
     var needCache: Bool
@@ -17,9 +17,23 @@ public struct LXMoyaLoadStatus {
     
     init(isRefresh: Bool = false,
          needLoadDBWhenRefreshing: Bool = false,
-         needCache: Bool = false,
-         clearDataWhenCache: Bool = false) {
+         needCache: Bool = true,
+         clearDataWhenCache: Bool = true) {
         self.isRefresh = isRefresh
+        self.needLoadDBWhenRefreshing = needLoadDBWhenRefreshing
+        self.needCache = needCache
+        self.clearDataWhenCache = clearDataWhenCache
+    }
+}
+
+public struct LXMoyaLoadStatus {
+    var needLoadDBWhenRefreshing: Bool
+    var needCache: Bool
+    var clearDataWhenCache: Bool
+    
+    init(needLoadDBWhenRefreshing: Bool = true,
+         needCache: Bool = true,
+         clearDataWhenCache: Bool = true) {
         self.needLoadDBWhenRefreshing = needLoadDBWhenRefreshing
         self.needCache = needCache
         self.clearDataWhenCache = clearDataWhenCache
@@ -29,7 +43,9 @@ public struct LXMoyaLoadStatus {
 public protocol MoyaAddable {
     var cacheKey: String { get }
     
-    var loadingStatus: LXMoyaLoadStatus { get }
+    func loadListStatus() -> LXMoyaLoadListStatus
+    
+    func loadStatus() -> LXMoyaLoadStatus
 }
 
 public extension MoyaAddable {
@@ -37,7 +53,11 @@ public extension MoyaAddable {
         return "cacheKey"
     }
     
-    var loadingStatus: LXMoyaLoadStatus {
+    func loadListStatus() -> LXMoyaLoadListStatus {
+        return LXMoyaLoadListStatus()
+    }
+    
+    func loadStatus() -> LXMoyaLoadStatus {
         return LXMoyaLoadStatus()
     }
 }

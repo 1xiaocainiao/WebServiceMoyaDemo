@@ -28,8 +28,8 @@ open class LXWebServiceHelper<T> where T: LXBaseModel {
     func requestJSONModel<R: TargetType & MoyaAddable>(_ type: R,
                                                        progressBlock: ProgressBlock? = nil,
                                                        completionHandle: @escaping ResultContainerHandle, exceptionHandle: @escaping ExceptionHandle) -> Cancellable? {
-        if type.loadingStatus.isRefresh, type.loadingStatus.needLoadDBWhenRefreshing {
-            if let model = LXBasicDBManager.sharedDBManager(sqlDBName()).getModelFrom(T.self, otherSqlDic: nil) as? T {
+        if type.loadStatus().needLoadDBWhenRefreshing {
+            if let model = LXBasicDBManager.sharedDBManager(sqlDBName()).getModelFrom(T.self, fromExtTable: type.cacheKey, otherSqlDic: nil) as? T {
                 let temp = LXRequestResultContainer<T>(jsonObject: [:], type: .model)
                 temp.dataModel = model
                 completionHandle(temp)
@@ -40,7 +40,7 @@ open class LXWebServiceHelper<T> where T: LXBaseModel {
             let container = LXRequestResultContainer<T>.init(jsonObject: result, type: .model)
             if container.isValid {
                 
-                LXBasicDBManager.sharedDBManager(sqlDBName()).insertModelObject(container.dataModel, clean: false)
+                LXBasicDBManager.sharedDBManager(sqlDBName()).insertModelObject(container.dataModel, clean: type.loadStatus().clearDataWhenCache, extTableName: type.cacheKey)
                 
                 completionHandle(container)
             } else {
@@ -56,7 +56,7 @@ open class LXWebServiceHelper<T> where T: LXBaseModel {
                                                             progressBlock: ProgressBlock? = nil,
                                                             completionHandle: @escaping ResultContainerHandle, exceptionHandle: @escaping ExceptionHandle) -> Cancellable? {
         
-        if type.loadingStatus.isRefresh, type.loadingStatus.needLoadDBWhenRefreshing {
+        if type.loadListStatus().isRefresh, type.loadListStatus().needLoadDBWhenRefreshing {
             if let array = LXBasicDBManager.sharedDBManager(sqlDBName()).getModelArray(from: T.self, fromExtTable: type.cacheKey, otherSqlDic: nil) as? [T] {
                 let temp = LXRequestResultContainer<T>(jsonObject: [:], type: .array)
                 temp.dataArray = array
@@ -68,7 +68,7 @@ open class LXWebServiceHelper<T> where T: LXBaseModel {
             let container = LXRequestResultContainer<T>.init(jsonObject: result, type: .array)
             if container.isValid {
                 
-                LXBasicDBManager.sharedDBManager(sqlDBName()).insertModelArray(container.dataArray, clean: type.loadingStatus.clearDataWhenCache, extTableName: type.cacheKey)
+                LXBasicDBManager.sharedDBManager(sqlDBName()).insertModelArray(container.dataArray, clean: type.loadListStatus().clearDataWhenCache, extTableName: type.cacheKey)
                 
                 completionHandle(container)
             } else {

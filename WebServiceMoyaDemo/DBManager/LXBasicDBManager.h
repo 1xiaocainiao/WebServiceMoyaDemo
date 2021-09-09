@@ -45,6 +45,8 @@ typedef NS_OPTIONS(NSUInteger, LXPropertyEncodingType) {
 
 - (BOOL)insertModelObject:(LXBaseModel *)info clean:(BOOL)clean;// 没有表会先创建
 
+- (BOOL)insertModelObject:(LXBaseModel *)info clean:(BOOL)clean extTableName:(NSString *)extTableName;
+
 - (BOOL)insertModelArray:(NSArray<LXBaseModel *> *)infoList clean:(BOOL)clean extTableName:(NSString *)extTableName;
 
 - (id)getModelFromClass:(Class)class otherSqlDic:(NSDictionary<NSString *, NSString *> *)sqlDic;
