@@ -31,7 +31,7 @@ public struct LXMoyaLoadStatus {
     var needCache: Bool
     var clearDataWhenCache: Bool
     
-    init(needLoadDBWhenRefreshing: Bool = true,
+    init(needLoadDBWhenRefreshing: Bool = false,
          needCache: Bool = true,
          clearDataWhenCache: Bool = true) {
         self.needLoadDBWhenRefreshing = needLoadDBWhenRefreshing
